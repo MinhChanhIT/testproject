@@ -1,16 +1,15 @@
 var mosca = require('mosca');
 
-var ascoltatore = {
-  //using ascoltatore
-  type: 'mongo',
-  url: 'mongodb://localhost:27017/mqtt2',
-  pubsubCollection: 'ascoltatori',
-  mongo: {}
-};
+// var ascoltatore = {
+//   //using ascoltatore
+//   type: 'mongo',
+//   url: 'mongodb://localhost:27017/mqtt2',
+//   pubsubCollection: 'ascoltatori',
+//   mongo: {}
+// };
 
 var settings = {
-  port: 1883,
-  backend: ascoltatore
+  port: process.env.PORT
 };
 
 var server = new mosca.Server(settings);
